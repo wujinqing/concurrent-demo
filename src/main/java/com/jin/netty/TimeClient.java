@@ -31,7 +31,7 @@ public class TimeClient {
 //                    ch.pipeline().addLast(new TimeDecoder(), new TimeClientHandler());
 //                    ch.pipeline().addLast(new TimeReplayingDecoder(), new TimeClientHandler());
 
-                    ch.pipeline().addLast(new UnixTimeEncoder(), new POJOTimeClientHandler());
+                    ch.pipeline().addLast(new POJOTimeDecoder(), new POJOTimeClientHandler());
                 }
             });
 
