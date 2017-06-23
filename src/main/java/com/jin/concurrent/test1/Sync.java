@@ -38,7 +38,7 @@ public class Sync {
     }
 
     public void z() {
-        System.out.println("z");
+        System.out.println("zero");
         delay();
     }
 
