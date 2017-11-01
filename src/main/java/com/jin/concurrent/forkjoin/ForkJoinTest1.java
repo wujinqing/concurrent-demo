@@ -41,14 +41,19 @@ public class ForkJoinTest1 {
                 SumTask t1 = new SumTask(src, start, split);
                 SumTask t2 = new SumTask(src, (start + split), (len - split));
 
-                return t1.invoke() + t2.invoke();
+                t1.fork();
+                t2.fork();
+                // 这种方式将在线程池中执行
+                return  t1.join() + t2.join();
+                // 这种方式将在主线程中执行
+//                return t1.invoke() + t2.invoke();
 
             }
         }
     }
 
     public static void main(String[] args) {
-        int len = 1000;
+        int len = 10;
         int[] src = new int[len];
 
         for (int i = 0; i < len; i++)
