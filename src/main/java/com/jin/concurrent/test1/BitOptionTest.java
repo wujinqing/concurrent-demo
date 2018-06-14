@@ -7,6 +7,8 @@ package com.jin.concurrent.test1;
  * 位与：第一个操作数的的第n位于第二个操作数的第n位如果都是1，那么结果的第n为也为1，否则为0
  * 位或操作：第一个操作数的的第n位于第二个操作数的第n位 只要有一个是1，那么结果的第n为也为1，否则为0
  * 位异或：第一个操作数的的第n位于第二个操作数的第n位 相反，那么结果的第n为也为1，否则为0
+ * 位非：操作数的第n位为1，那么结果的第n位为0，反之。
+ *
  * @author wu.jinqing
  * @date 2017年06月23日
  */
@@ -29,8 +31,18 @@ public class BitOptionTest {
         return s;
     }
 
+    public static void op()
+    {
+        System.out.println("X=" + toBinaryString(X));
+        System.out.println("Y=" + toBinaryString(Y));
+        System.out.println("&=" + toBinaryString(X & Y));
+        System.out.println("|=" + toBinaryString(X | Y));
+        System.out.println("^=" + toBinaryString(X ^ Y));
+        System.out.println("~=" + toBinaryString(~X));
+    }
+
     public static void main(String[] args) {
-        System.out.println(toBinaryString(X & Y));
+        op();
 
 
 
